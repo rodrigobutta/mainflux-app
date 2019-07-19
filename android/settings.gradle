@@ -1,0 +1,27 @@
+rootProject.name = 'Mainflux'
+include ':lottie-react-native'
+project(':lottie-react-native').projectDir = new File(rootProject.projectDir, '../node_modules/lottie-react-native/src/android')
+include ':react-native-uuid-generator'
+project(':react-native-uuid-generator').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-uuid-generator/android')
+include ':react-native-popover-menu'
+project(':react-native-popover-menu').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-popover-menu/android')
+include ':react-native-image-crop-picker'
+project(':react-native-image-crop-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-crop-picker/android')
+// include ':react-native-camera'
+// project(':react-native-camera').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-camera/android')
+include ':react-native-blur'
+project(':react-native-blur').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-blur/android')
+include ':react-native-google-signin'
+project(':react-native-google-signin').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-google-signin/android')
+include ':react-native-fbsdk'
+project(':react-native-fbsdk').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fbsdk/android')
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+include ':react-native-firebase'
+project(':react-native-firebase').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-firebase/android')
+include ':react-native-gesture-handler'
+project(':react-native-gesture-handler').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gesture-handler/android')
+include ':react-native-pusher-push-notifications'
+project(':react-native-pusher-push-notifications').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pusher-push-notifications/android')
+
+include ':app'

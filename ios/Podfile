@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Mainflux' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  pod 'React', :path => '../node_modules/react-native'
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  
+  pod 'Firebase/Core', '5.7.0'
+  pod 'Firebase/Firestore', '5.7.0'
+  pod 'Firebase/Auth', '5.7.0'
+
+#  pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
+
+#  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'RNFirebase', path: '../node_modules/react-native-firebase/ios'
+  pod 'GoogleSignIn', '4.4.0'
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
+
+  
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
+
+  
+end

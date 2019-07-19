@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "729728661582",
+    "firebase_url": "https://mainflux-246213.firebaseio.com",
+    "project_id": "mainflux-246213",
+    "storage_bucket": "mainflux-246213.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729728661582:android:76c4184b695f57c1",
+        "android_client_info": {
+          "package_name": "com.rodrigobutta.mainflux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729728661582-d4t0ts26umq98abpiuntlimked9n5maa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rodrigobutta.mainflux",
+            "certificate_hash": "b22ad1b410f277161de573ac55c9c2002ca5b76a"
+          }
+        },
+        {
+          "client_id": "729728661582-9js8hgq6t2um382djmk5v2v63feeh1va.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGyAGfhBrArmjn1LxZKJna2d5F6KMeohQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729728661582-9js8hgq6t2um382djmk5v2v63feeh1va.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

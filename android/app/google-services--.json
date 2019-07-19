@@ -1,0 +1,109 @@
+{
+  "project_info": {
+    "project_number": "447873658613",
+    "firebase_url": "https://mainflux-30139.firebaseio.com",
+    "project_id": "mainflux-30139",
+    "storage_bucket": "mainflux-30139.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447873658613:android:b617a3181c8baacc",
+        "android_client_info": {
+          "package_name": "com.rodrigobutta.mainflux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447873658613-v66aej7rb877g6odb0n5v8v58th55rr5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rodrigobutta.mainflux",
+            "certificate_hash": "b22ad1b410f277161de573ac55c9c2002ca5b76a"
+          }
+        },
+        {
+          "client_id": "447873658613-o536v5f5c4c1l0o12tctgpkok0fsph01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGEQpTlW6cMvbD6shLQCWZ-KMmZ6k69Xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447873658613-o536v5f5c4c1l0o12tctgpkok0fsph01.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "447873658613-pjvd4erpekmc6bbplde5m2gbk4ov6l4t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rodrigobutta.mainflux",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447873658613:android:b617a3181c8baacc",
+        "android_client_info": {
+          "package_name": "com.rodrigobutta.mainflux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447873658613-8i03a589njjf02cs1ckhcut36msqafeu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rodrigobutta.mainflux",
+            "certificate_hash": "b22ad1b410f277161de573ac55c9c2002ca5b76a"
+          }
+        },
+        {
+          "client_id": "447873658613-u3b5cqboiqcb92vojnf9nd5iv9isjjvb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rodrigobutta.mainflux",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "447873658613-o536v5f5c4c1l0o12tctgpkok0fsph01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGEQpTlW6cMvbD6shLQCWZ-KMmZ6k69Xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447873658613-o536v5f5c4c1l0o12tctgpkok0fsph01.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "447873658613-pjvd4erpekmc6bbplde5m2gbk4ov6l4t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rodrigobutta.mainflux",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
