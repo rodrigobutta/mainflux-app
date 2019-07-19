@@ -27,7 +27,7 @@ import RNPusherPushNotifications from 'react-native-pusher-push-notifications';
 // Enable pusher logging - don't include this in production
 Pusher.logToConsole = true;
 
-var pusher = new Pusher('337ed7b75cb40c3bc159', {
+var pusher = new Pusher('37f473229fafa68fdaa3', {
   cluster: 'us2',
   forceTLS: true
 });
@@ -47,7 +47,7 @@ channel.bind('my-event', function(data) {
 // Initialize notifications
 export const init = () => {
   // Set your app key and register for push
-  RNPusherPushNotifications.setInstanceId("063823b2-17a8-4234-8ba8-92cd22f58b40");
+  RNPusherPushNotifications.setInstanceId("952075ad-7c0f-4a00-bcd4-490c5313679e"); // esto viene de https://dash.pusher.com/beams/
 
   // Init interests after registration
   RNPusherPushNotifications.on('registered', () => {

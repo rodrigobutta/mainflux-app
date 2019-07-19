@@ -29,7 +29,7 @@ import com.facebook.appevents.AppEventsLogger;
 
 // import com.pusher.pushnotifications.BeamsTokenProvider; // este era para el pusher nativo
 // import com.pusher.pushnotifications.AuthDataGetter; 
-// import com.pusher.pushnotifications.PushNotifications; 
+import com.pusher.pushnotifications.PushNotifications; 
 // import com.pusher.pushnotifications.AuthData; 
 
 import com.b8ne.RNPusherPushNotifications.RNPusherPushNotificationsPackage;  // ahora uso libreria con metodos events y eso
@@ -82,13 +82,13 @@ public class MainApplication extends Application implements ReactApplication {
     public void onCreate() {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
-        FacebookSdk.setApplicationId("2342131725810594");
+        FacebookSdk.setApplicationId("644213442759498");
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
 
-        // este era para el pusher nativo
-        // PushNotifications.start(getApplicationContext(), "063823b2-17a8-4234-8ba8-92cd22f58b40");
-        // PushNotifications.addDeviceInterest("hello");
+        // este era para el pusher nativo / necesario para habilitar
+        PushNotifications.start(getApplicationContext(), "952075ad-7c0f-4a00-bcd4-490c5313679e");
+        PushNotifications.addDeviceInterest("hello");
 
         // BeamsTokenProvider tokenProvider = new BeamsTokenProvider(
         //     "http://local.mainflux.com.ar/api/test/notification-negotiate-token",
