@@ -10,13 +10,13 @@ import {
 } from "react-native";
 
 import CommonStyles from "../../utils/CommonStyles";
-import MainMenuBurguer from "../../modules/menu/MainMenuBurguer";
+import MainMenuBurguer from "../../modules/layout/MainMenuBurguer";
 
 
 export default class InitModule extends React.Component<any, any>{     
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: 'Solicitiar',
+      headerTitle: 'Tus tareas',
       headerLeft: (
         <MainMenuBurguer navigation={navigation} badge={1}  />        
       ),
@@ -30,7 +30,6 @@ export default class InitModule extends React.Component<any, any>{
   render() {
     const { navigation } = this.props;
 
-
     return (
       <SafeAreaView style={CommonStyles.safeAreaContainer}>
         <View
@@ -38,21 +37,16 @@ export default class InitModule extends React.Component<any, any>{
         >
 
           <Text style={{ fontSize: 22, marginBottom: 10 }}>
-            Solicitar servicio
+            Estas son tus tareas
           </Text>
 
-          <Button onPress={() => navigation.navigate('RequestFormModule')} title="Nueva solicitud" />
-          
-            
-
+          <Button onPress={() => navigation.navigate('RequestFormModule')} title="Hacer alguna" />
           
         </View>
       </SafeAreaView>
     );
   }
 }
-
-
 
 
 const styles = StyleSheet.create({

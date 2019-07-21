@@ -18,7 +18,7 @@ import { colors } from './config/theme';
 import axiosService from './utils/lib/axiosService';
 
 import CommonStyles from "../../utils/CommonStyles";
-import MainMenuBurguer from "../../modules/menu/MainMenuBurguer";
+import MainMenuBurguer from "../../modules/layout/MainMenuBurguer";
 
 
 // screen height and width

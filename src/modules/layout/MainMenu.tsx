@@ -11,16 +11,17 @@ import firebase from "react-native-firebase";
 import { LoginManager } from "react-native-fbsdk";
 import { GoogleSignin } from "react-native-google-signin";
 
-import MainMenuProfile from './MainMenuProfile'
+import Profile from './Profile'
 import MainMenuItem from './MainMenuItem'
+import Notifications from './Notifications'
 
 
 const menuData = [
-    {icon: "ios-home", label:"Dashboard", screen:'Dashboard', key:'menu_dashboard'},
+    {icon: "ios-home", label:"Inicio", screen:'Dashboard', key:'menu_dashboard'},
     {icon: "ios-person", label:"Perfil", screen: 'Profile', key:'menu_profile'},  
-    {icon: "ios-megaphone", label:"Pedidos", screen: 'Request', key:'menu_request'},  
-    {icon: "ios-happy", label:"Test", screen: 'Agenda', key:'menu_test'},  
-    {icon: "ios-happy", label:"Pedidos", screen: 'Requests', key:'menu_requests'},  
+    {icon: "ios-megaphone", label:"Test1 Form", screen: 'Request', key:'menu_request'},  
+    {icon: "ios-happy", label:"Test2 Agenda", screen: 'Agenda', key:'menu_test'},  
+    {icon: "ios-happy", label:"Test3 Grilla", screen: 'Requests', key:'menu_requests'},  
   ]
   
 
@@ -44,7 +45,7 @@ class MainMenu extends Component {
 
     return (
       <View style={styles.container}>
-        <MainMenuProfile profileUrl={user.avatar} username={user.name} email={user.email} />
+        <Profile avatar={user.avatar} username={user.name} email={user.email} />
         
         <FlatList
             data={menuData} 
@@ -55,7 +56,10 @@ class MainMenu extends Component {
         />
 
         <Button title={'Cerrar sesión'} onPress={this._logout}/>
-      
+
+
+        <Notifications />
+
       </View>
     );
   }

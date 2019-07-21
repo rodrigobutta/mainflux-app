@@ -18,12 +18,9 @@ import { API_URL } from '../../config/enviroment';
 // import {setCategory, setCategories} from '../../redux/reducers/RequestStateReducer';
 import * as RequestStateActions from '../../redux/reducers/RequestStateReducer';
 
-
 import CommonStyles from "../../utils/CommonStyles";
-import MainMenuBurguer from "../../modules/menu/MainMenuBurguer";
-// import { navigationOption/utils/CommonStyles";
+import MainMenuBurguer from "../../modules/layout/MainMenuBurguer";
 import Autocomplete from '../../components/autocomplete/Autocomplete';
-import { SectionGrid } from 'react-native-super-grid';
 
 import { notificationsInit, notificationsSubscribe, notificationsUnsubscribe } from "../../utils/Notifications";
 
@@ -42,7 +39,6 @@ class Home extends React.Component<any, any>{
     
     this.state = {
       categories: [],
-      suggested: [],
       query: ''
     };
 
@@ -67,91 +63,50 @@ class Home extends React.Component<any, any>{
 
   }
 
-
-  
   onTestClick = () => {
     console.log('test click')
-
     notificationsInit();
-
   }
-
 
   onTest2Click = () => {
     console.log('test2 click')
-
     notificationsSubscribe("test");
-
   }
 
   onTest3Click = () => {
     console.log('test3 click')
-
     notificationsUnsubscribe("hello");
-
   }
 
 
   componentDidMount() {
 
-
-    // TODO hacer algun request con refresh needs
-
     var data = {};
         data.parentId = 1;
 
     axios
-    .post(API_URL + '/folder/list', data)
+    .post(API_URL + '/task/list', data)
     .then(response => {
       
       console.log(response.data.data);
               
-      this.props.requestStateActions.setCategories(response.data.data);
+      // this.props.requestStateActions.setCategories(response.data.data);
       
       return true;
     })
     .catch(error => {
-
       console.log(error)
-
-      this._logout;
-
     });
 
 
-
-
-    const { categories } = this.props.request;
-
-    console.log(categories);
-
-    const suggested = [
-      {
-        title: 'Casa',
-        data: categories.slice(0, 6),
-      },
-      {
-        title: 'Autos y Motos',
-        data: categories.slice(6, 12),
-      },
-      {
-        title: 'Oficina',
-        data: categories.slice(12, 20),
-      }
-    ];
-    this.setState({ suggested });
+    // const { categories } = this.props.request;
+    // console.log(categories);
 
   }
 
 
   render() {
-    // const { currentUser } = firebase.auth();
     const { user } = this.props.auth;
-
-    
-
-    const { suggested } = this.state;
-
     const { categories } = this.props.request;
 
     return (
@@ -173,14 +128,9 @@ class Home extends React.Component<any, any>{
 
           <View style={{ height: 30 }} />
 
-
-          <Button onPress={this.onTestClick} title={"Init"} />
-          <Button onPress={this.onTest2Click} title={"Suscribe"} />
-          <Button onPress={this.onTest3Click} title={"UnSuscribe"} />
-          
-          <Text style={{ fontSize: 22, marginBottom: 10 }}>
-            ¿Qué estás necesitando?
-          </Text>
+          <Button onPress={this.onTestClick} title={"Test 1"} />
+          <Button onPress={this.onTest2Click} title={"Test 2"} />
+          <Button onPress={this.onTest3Click} title={"Test 3"} />
             
           <Autocomplete
               list={categories}
@@ -189,36 +139,9 @@ class Home extends React.Component<any, any>{
               inputStyle={styles.searchInput}
               suggestBoxStyle={styles.suggestBox}
               suggestBoxMaxHeight={220}
-              placeholder="plomero, destapar baño, .."
+              placeholder="buscar tarea .."
           />
 
-          <View style={{ height: 30 }} />
-          
-          <SectionGrid
-            itemDimension={150}
-            // staticDimension={300}
-            // fixed
-            // spacing={20}
-            sections={suggested}
-            style={styles.gridView}
-            renderItem={({ item, section, index }) => (
-
-              <TouchableOpacity
-                accessibilityLabel={item.name}
-                accessibilityRole="button"                
-                key={index}                
-                onPress={this.onCategoryClick.bind(this, item)}
-              >
-                <View style={[styles.itemContainer, { backgroundColor: item.color }]}>
-                  <Text style={styles.itemName}>{item.name}</Text>
-                  <Text style={styles.itemCode}>{item.color}</Text>
-                </View>
-              </TouchableOpacity>
-            )}
-            renderSectionHeader={({ section }) => (
-              <Text style={styles.sectionHeader}>{section.title}</Text>
-            )}
-          />
 
         </View>
       </SafeAreaView>
@@ -235,7 +158,6 @@ class Home extends React.Component<any, any>{
 // export default connect(mapStateToProps)(Home);
 
 
-
 export default connect(
   state => ({
     auth: state.auth,
@@ -247,8 +169,6 @@ export default connect(
     };
   }
 )(Home);
-
-
 
 
 const styles = StyleSheet.create({

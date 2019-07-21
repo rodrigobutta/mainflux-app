@@ -22,8 +22,6 @@ import Pusher from 'pusher-js/react-native';
 import RNPusherPushNotifications from 'react-native-pusher-push-notifications';
 
 
-
-
 // PUSHER
 
 // Enable pusher logging - don't include this in production
@@ -294,6 +292,10 @@ class MainApp extends React.Component {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider>
+
+
+
+
           {/* <View style={{ flex: 1 }}> */}
             {this.state.isLogin ? <MainRouter /> : <LoginRouter />}          
           {/* </View> */}

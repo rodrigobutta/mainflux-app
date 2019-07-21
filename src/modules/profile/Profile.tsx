@@ -15,7 +15,7 @@ import firebase from "react-native-firebase";
 import { LoginManager } from "react-native-fbsdk";
 import { GoogleSignin } from "react-native-google-signin";
 
-import MainMenuBurguer from "../../modules/menu/MainMenuBurguer";
+import MainMenuBurguer from "../../modules/layout/MainMenuBurguer";
 
 
 export default class Profile extends React.Component<any, any>{     

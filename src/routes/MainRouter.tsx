@@ -13,7 +13,7 @@ import {
 import { NavigationScreenProp, NavigationState } from 'react-navigation';
 import { fromLeft, fromRight, zoomIn, zoomOut } from 'react-navigation-transitions';
 
-import MainMenuContents from "../modules/menu/MainMenu";
+import MainMenuContents from "../modules/layout/MainMenu";
 import HomeModule from "../modules/home/Home";
 import ProfileModule from "../modules/profile/Profile";
 import EditProfileModule from "../modules/profile/Edit";
