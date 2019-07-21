@@ -22,6 +22,8 @@ import Pusher from 'pusher-js/react-native';
 import RNPusherPushNotifications from 'react-native-pusher-push-notifications';
 
 
+
+
 // PUSHER
 
 // Enable pusher logging - don't include this in production
@@ -29,7 +31,8 @@ Pusher.logToConsole = true;
 
 var pusher = new Pusher('37f473229fafa68fdaa3', {
   cluster: 'us2',
-  forceTLS: true
+  forceTLS: true,
+  activityTimeout: 11000 // evitar warning  https://github.com/pusher/pusher-js/issues/239
 });
 
 var channel = pusher.subscribe('my-channel');

@@ -25,4 +25,6 @@ target 'Mainflux' do
   pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
 
   
+  pod 'react-native-background-timer', :path => '../node_modules/react-native-background-timer'
+
 end
