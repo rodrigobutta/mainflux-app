@@ -16,7 +16,7 @@ import {
 export default class Notifications extends React.Component<any, any>{     
 
   state = {
-    active: true
+    active: false
   }
   
   

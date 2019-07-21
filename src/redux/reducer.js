@@ -12,6 +12,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 import AuthStateReducer from './reducers/AuthStateReducer';
 import LocationStateReducer from './reducers/LocationStateReducer';
 import RequestStateReducer from './reducers/RequestStateReducer';
+import NotificationStateReducer from './reducers/NotificationStateReducer';
 
 // import {MainNavigation } from '../utils/MainReducer';
 
@@ -33,6 +34,7 @@ const reducers = {
   auth: persistReducer(persistConfig, AuthStateReducer),
   request: persistReducer(persistConfig, RequestStateReducer),
   location: persistReducer(persistConfig, LocationStateReducer),
+  notification: persistReducer(persistConfig, NotificationStateReducer),
 };
 
 

@@ -15,6 +15,7 @@ import MainRouter from "./routes/MainRouter";
 import {store, persistor} from './redux/store';
 import { API_URL } from './config/enviroment';
 import {setToken, setUser, resetToken, resetUser} from './redux/reducers/AuthStateReducer';
+import {notificationArrived} from './redux/reducers/NotificationStateReducer';
 
 import Pusher from 'pusher-js/react-native';
 
@@ -33,9 +34,14 @@ var pusher = new Pusher('37f473229fafa68fdaa3', {
   activityTimeout: 11000 // evitar warning  https://github.com/pusher/pusher-js/issues/239
 });
 
-var channel = pusher.subscribe('my-channel');
-channel.bind('my-event', function(data) {
-  console.log(JSON.stringify(data));
+var channel = pusher.subscribe('app-notifications');
+
+channel.bind('newNotification', function(data) {
+  
+  console.log(data);
+
+  store.dispatch(notificationArrived(data));
+
 });
 
 // FINPUSHER
