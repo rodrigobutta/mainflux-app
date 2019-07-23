@@ -98,26 +98,16 @@ export default class Profile extends React.Component<any, any>{
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
 
-
-
-          
-
-
-
-          <Image
-            source={require("../../../assets/app_logo.png")}
-            style={{ height: 100, width: 100, marginBottom: 10 }}
-          />
           <Text style={{ fontSize: 22, marginBottom: 10 }}>
-            Logueado!
+            Imagen del avatar del social
           </Text>
 
           {currentUser&&
             <React.Fragment>
               <Image source={{ uri: currentUser.photoURL }} style={{ width: 50, height: 50, marginTop:10 }} />            
-              <Text style={styles.normalText}>Name: {currentUser.displayName}</Text>
+              <Text style={styles.normalText}>Nombre: {currentUser.displayName}</Text>
               <Text style={styles.normalText}>Email: {currentUser.email}</Text>
-              <Text style={styles.normalText}>Login Type : {this._loginType()}</Text>
+              <Text style={styles.normalText}>Tipo : {this._loginType()}</Text>
             </React.Fragment>            
           }
           
@@ -128,7 +118,7 @@ export default class Profile extends React.Component<any, any>{
             style={[CommonStyles.themeButton, { marginTop: 20 }]}
             onPress={this._logout}
           >
-            <Text style={CommonStyles.themeButtonTitle}>Logout</Text>
+            <Text style={CommonStyles.themeButtonTitle}>Salir</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

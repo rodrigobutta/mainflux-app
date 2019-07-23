@@ -1,3 +1,5 @@
+import './src/utils/fixtimerbug';
+
 import React, { Component } from "react";
 import axios from 'axios';
 
