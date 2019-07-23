@@ -22,7 +22,7 @@ import RequestInitModule from "../modules/request/InitModule";
 import RequestFormModule from "../modules/request/FormModule";
 import RequestViewModule from "../modules/request/ViewModule";
 import RequestsModule from "../modules/requests/RequestsModule";
-
+import TestGeolocationModule from "../modules/test/GeolocationModule";
 
 const SubScreenWrapper = ({
   navigation,
@@ -62,6 +62,22 @@ const ProfileStack = createStackNavigator(
         <Text>XX</Text>
       ),
       drawerLabel: 'tu Perfil',
+    },
+  }
+);
+
+
+
+const TestStack = createStackNavigator(
+  {
+    Geolocation: { screen: TestGeolocationModule }    
+  },
+  {
+    navigationOptions: {
+      drawerIcon: ({ tintColor }) => (
+        <Text>XX</Text>
+      ),
+      drawerLabel: 'pruebas',
     },
   }
 );
@@ -172,6 +188,10 @@ export const MainNavigation = createDrawerNavigator(
     Profile: {
       path: '/profile',
       screen: ProfileStack,
+    },
+    Test: {
+      path: '/test',
+      screen: TestStack,
     },
     Request: {
       path: '/request',

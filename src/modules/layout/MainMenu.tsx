@@ -20,12 +20,11 @@ const menuData = [
     {icon: "ios-home", label:"Inicio", screen:'Dashboard', key:'menu_dashboard'},
     {icon: "ios-person", label:"Perfil", screen: 'Profile', key:'menu_profile'},  
     {icon: "ios-megaphone", label:"Test1 Form", screen: 'Request', key:'menu_request'},  
-    {icon: "ios-happy", label:"Test2 Agenda", screen: 'Agenda', key:'menu_test'},  
+    {icon: "ios-happy", label:"Test2 Agenda", screen: 'Agenda', key:'menu_test_agenda'},  
     {icon: "ios-happy", label:"Test3 Grilla", screen: 'Requests', key:'menu_requests'},  
+    {icon: "ios-happy", label:"Test4 Geo", screen: 'Test', key:'menu_test_geo'},  
   ]
   
-
-
 class MainMenu extends Component {
 
 
