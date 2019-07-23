@@ -6,6 +6,8 @@ import axios from 'axios';
 import {store} from './src/redux/store';
 import MainApp from './src/MainApp';
 
+
+// TODO solo DEBUG
 // XMLHttpRequest = GLOBAL.originalXMLHttpRequest ?
 //     GLOBAL.originalXMLHttpRequest :
 //     GLOBAL.XMLHttpRequest;

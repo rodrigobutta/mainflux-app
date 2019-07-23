@@ -8,36 +8,34 @@ import { PersistGate } from 'redux-persist/integration/react'
 import axios from 'axios';
 import { ThemeProvider } from 'react-native-elements';
 
-
 import LoginRouter from "./routes/LoginRouter";
 import MainRouter from "./routes/MainRouter";
 
 import {store, persistor} from './redux/store';
 import { API_URL } from './config/enviroment';
 import {setToken, setUser, resetToken, resetUser} from './redux/reducers/AuthStateReducer';
+
 import {notificationArrived} from './redux/reducers/NotificationStateReducer';
-
 import Pusher from 'pusher-js/react-native';
-
-// Import module
 import RNPusherPushNotifications from 'react-native-pusher-push-notifications';
 
 
 // PUSHER
 
+// TODO solo DEBUG
 Pusher.logToConsole = true;
 
 var pusher = new Pusher('37f473229fafa68fdaa3', {
   cluster: 'us2',
   forceTLS: true,
-  activityTimeout: 119999 // evitar warning  https://github.com/pusher/pusher-js/issues/239
+  activityTimeout: 119999 // evitar warning  https://github.com/pusher/pusher-js/issues/239 y https://github.com/facebook/react-native/issues/12981
 });
 
 var channel = pusher.subscribe('app-notifications');
 
 channel.bind('newNotification', function(data) {
   
-  console.log(data);
+ 	console.log(data);
 
   store.dispatch(notificationArrived(data));
 
@@ -46,81 +44,80 @@ channel.bind('newNotification', function(data) {
 // FINPUSHER
 
 
+// PUSHER FIREBASE (con BACKGROUND
+// TODO Ver que hay registration en JAVA)
+
+		// Initialize notifications
+		export const init = () => {
+				// Set your app key and register for push
+				RNPusherPushNotifications.setInstanceId("952075ad-7c0f-4a00-bcd4-490c5313679e"); // esto viene de https://dash.pusher.com/beams/
+
+				// Init interests after registration
+				RNPusherPushNotifications.on('registered', () => {
+						subscribe("hello");
+				});
+
+				// Setup notification listeners
+				RNPusherPushNotifications.on('notification', handleNotification);
+		};
+
+		// Handle notifications received
+		const handleNotification = notification => {
+				
+				console.log(notification);
+
+				// iOS app specific handling
+				if (Platform.OS === 'ios') {
+				
+						switch (notification.appState) {
+								case 'inactive':
+								// inactive: App came in foreground by clicking on notification.
+								//           Use notification.userInfo for redirecting to specific view controller
+								case 'background':
+								// background: App is in background and notification is received.
+								//             You can fetch required data here don't do anything with UI
+								case 'active':
+								// App is foreground and notification is received. Show a alert or something.
 
 
-// PUSHER FIREBASE
-
-// Initialize notifications
-export const init = () => {
-  // Set your app key and register for push
-  RNPusherPushNotifications.setInstanceId("952075ad-7c0f-4a00-bcd4-490c5313679e"); // esto viene de https://dash.pusher.com/beams/
-
-  // Init interests after registration
-  RNPusherPushNotifications.on('registered', () => {
-    subscribe("hello");
-  });
-
-  // Setup notification listeners
-  RNPusherPushNotifications.on('notification', handleNotification);
-};
-
-// Handle notifications received
-const handleNotification = notification => {
-  
-  console.log(notification);
-
-  // iOS app specific handling
-  if (Platform.OS === 'ios') {
-  
-    switch (notification.appState) {
-      case 'inactive':
-      // inactive: App came in foreground by clicking on notification.
-      //           Use notification.userInfo for redirecting to specific view controller
-      case 'background':
-      // background: App is in background and notification is received.
-      //             You can fetch required data here don't do anything with UI
-      case 'active':
-      // App is foreground and notification is received. Show a alert or something.
+								default:
+										break;
+						}
+				
+				}
+				else {
+								console.log("android handled notification...");
+				}
 
 
-      default:
-        break;
-    }
-  
-  }
-  else {
-      console.log("android handled notification...");
-  }
+		};
 
+		// Subscribe to an interest
+		const subscribe = interest => {
+				// Note that only Android devices will respond to success/error callbacks
+				RNPusherPushNotifications.subscribe(
+						interest,
+						(statusCode, response) => {
+								console.error(statusCode, response);
+						},
+						() => {
+								console.log('Success');
+						}
+				);
+		};
 
-};
-
-// Subscribe to an interest
-const subscribe = interest => {
-  // Note that only Android devices will respond to success/error callbacks
-  RNPusherPushNotifications.subscribe(
-    interest,
-    (statusCode, response) => {
-      console.error(statusCode, response);
-    },
-    () => {
-      console.log('Success');
-    }
-  );
-};
-
-// Unsubscribe from an interest
-const unsubscribe = interest => {
-  RNPusherPushNotifications.unsubscribe(
-    interest,
-    (statusCode, response) => {
-      console.log(statusCode, response);
-    },
-    () => {
-      console.log('Success');
-    }
-  );
-};
+		// Unsubscribe from an interest
+		const unsubscribe = interest => {
+				RNPusherPushNotifications.unsubscribe(
+						interest,
+						(statusCode, response) => {
+								console.log(statusCode, response);
+						},
+						() => {
+								console.log('Success');
+						}
+				);
+		};
 
 
 // FIN PUSHER FIREBASE
