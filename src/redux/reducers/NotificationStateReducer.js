@@ -12,19 +12,18 @@ export function notificationArrived($data) {
   return {
     type: ARRIVED,
     payload: {
-      uuid: "123123123",
+      unid: $data.unid,
       data: $data
     }
   };
 
 }
 
-
-export function notificationDismissed($data) {   
+export function notificationDismissed($unid) {   
   return {
     type: DISMISSED,
     payload: {
-      uuid: "123123123"
+      unid: $unid
     }
   };
 
@@ -34,12 +33,6 @@ export function notificationDismissed($data) {
 export default function NotificationStateReducer(state = INITIAL_STATE, action = {}) {
 
   switch (action.type) {
-    
-
-    // case ARRIVED:
-    //   return { ...state, 
-    //     notifications: action.payload.data
-    //   };
 
     case ARRIVED:
       {
@@ -48,19 +41,12 @@ export default function NotificationStateReducer(state = INITIAL_STATE, action =
         }
       }
 
-    // case DISMISSED:
-    //   {
-
-    //     const prunedIds = state.byId.filter(item => {
-    //       return item !== action.id // return all the items not matching the action.id
-    //     })
-    //     delete state.byHash[action.id] // delete the hash associated with the action.id
-        
-    //     return {
-    //       byId: prunedIds,
-    //       byHash: state.byHash
-    //     }
-    //   }
+    case DISMISSED:
+      {
+        return {
+          notifications: state.notifications.filter(({ unid }) => unid !== action.payload.unid), 
+        }
+      }
   
     default:
       return state;

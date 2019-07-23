@@ -46,6 +46,8 @@ channel.bind('newNotification', function(data) {
 
 // PUSHER FIREBASE (con BACKGROUND
 // TODO Ver que hay registration en JAVA)
+// https://github.com/b8ne/react-native-pusher-push-notifications
+// PUSHER BEAMS
 
 		// Initialize notifications
 		export const init = () => {

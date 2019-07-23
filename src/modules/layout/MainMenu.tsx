@@ -54,10 +54,9 @@ class MainMenu extends Component {
             } 
         />
 
-        <Button title={'Cerrar sesión'} onPress={this._logout}/>
-
-
         <Notifications />
+
+        <Button title={'Cerrar sesión'} onPress={this._logout}/>
 
       </View>
     );
