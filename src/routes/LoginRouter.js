@@ -9,10 +9,10 @@ const LoginRouter = createAppContainer(
   createBottomTabNavigator(
     {
       EmailLogin: EmailLogin,
-      PhoneLogin:PhoneLogin,
+      // PhoneLogin:PhoneLogin,
       FBLogin:FBLogin,
       GoogleLogin:GoogleLogin,
-      AnonymousLogin:AnonymousLogin
+      // AnonymousLogin:AnonymousLogin
     },
     {
       tabBarOptions: {

@@ -283,12 +283,10 @@ class MainApp extends React.Component {
 
   renderLoading = () => (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-
       <Image
         source={require("../assets/app_logo.png")}
         style={{ height: 100, width: 100 }}
       />
-
     </View>
   );
 
@@ -296,13 +294,7 @@ class MainApp extends React.Component {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider>
-
-
-
-
-          {/* <View style={{ flex: 1 }}> */}
             {this.state.isLogin ? <MainRouter /> : <LoginRouter />}          
-          {/* </View> */}
         </ThemeProvider>
       </PersistGate>
     </Provider>

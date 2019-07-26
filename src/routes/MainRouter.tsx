@@ -2,7 +2,8 @@ import React from "react";
 import {  
   Text,  
   ScrollView, 
-  StatusBar
+  StatusBar,
+  Button
 } from "react-native";
 import {
   createDrawerNavigator,
@@ -23,8 +24,14 @@ import RequestFormModule from "../modules/request/FormModule";
 import RequestViewModule from "../modules/request/ViewModule";
 import RequestsModule from "../modules/requests/RequestsModule";
 import TestGeolocationModule from "../modules/test/GeolocationModule";
+import FileModule from "../modules/test/FileModule";
 
-const SubScreenWrapper = ({
+
+
+
+// TESTS
+
+const TestWrapper = ({
   navigation,
   banner,
 }: {
@@ -33,22 +40,23 @@ const SubScreenWrapper = ({
 }) => (
   <ScrollView>
     <SafeAreaView forceInset={{ top: 'always' }}>      
-      <Button onPress={() => navigation.openDrawer()} title="Menú" />
-      <Button onPress={() => navigation.navigate('Dashboard2')} title="Directo Dashboard 2" />
-      <Button onPress={() => navigation.navigate('Index')} title="Volver" />
+      <Button onPress={() => navigation.openDrawer()} title="Menú" />      
+      <Button onPress={() => navigation.navigate('Geolocation')} title="Geo" />
+      <Button onPress={() => navigation.navigate('File')} title="File" />      
     </SafeAreaView>
     <StatusBar barStyle="default" />
   </ScrollView>
 );
 
-
-
-
-const Dashboard2Screen = ({
+const TestScreen = ({
   navigation,
 }: {
   navigation: NavigationScreenProp<NavigationState>;
-}) => <SubScreenWrapper banner={'Dashboard 2 Screen'} navigation={navigation} />;
+}) => <TestWrapper banner={'Tests Screen'} navigation={navigation} />;
+
+// FIN TESTS
+
+
 
 
 const ProfileStack = createStackNavigator(
@@ -68,25 +76,13 @@ const ProfileStack = createStackNavigator(
 
 
 
-const TestStack = createStackNavigator(
-  {
-    Geolocation: { screen: TestGeolocationModule }    
-  },
-  {
-    navigationOptions: {
-      drawerIcon: ({ tintColor }) => (
-        <Text>XX</Text>
-      ),
-      drawerLabel: 'pruebas',
-    },
-  }
-);
-
 
 const DashboardStack = createStackNavigator(
   {
     HomeModule: { screen: HomeModule },
-    Dashboard2: { screen: Dashboard2Screen },
+    TestScreen: { screen: TestScreen },
+    Geolocation: { screen: TestGeolocationModule } ,
+    File: { screen: FileModule }    
   },
   {
     navigationOptions: {
@@ -185,13 +181,13 @@ export const MainNavigation = createDrawerNavigator(
       screen: DashboardStack,
       // screen: HomeModule,
     },
+    Tests: {
+      path: '/tests',
+      screen: TestScreen,
+    },
     Profile: {
       path: '/profile',
       screen: ProfileStack,
-    },
-    Test: {
-      path: '/test',
-      screen: TestStack,
     },
     Request: {
       path: '/request',

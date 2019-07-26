@@ -74,17 +74,17 @@ export default class EmailLogin extends Component {
   _validateLogin = () => {
     const { loginEmail, loginPassword } = this.state;
     if (!this._validateEmail(loginEmail)) {
-      alert("Please enter valid email");
+      alert("Por favor, un email valido");
       return false;
     }
 
     if (loginPassword.trim() === "") {
-      alert("Please enter password");
+      alert("Por favor, un password");
       return false;
     }
 
     if (loginPassword.trim().length < 6) {
-      alert("Length of the password should be at least 6");
+      alert("El pass tiene que tener al menos 6 carateres");
       return false;
     }
 
@@ -115,22 +115,22 @@ export default class EmailLogin extends Component {
   _validateSignUp = () => {
     const { signUpFullName, signUpEmail, signUpPassword } = this.state;
     if (signUpFullName.trim() === "") {
-      alert("Please enter full name");
+      alert("Por favor, tu nombre");
       return false;
     }
 
     if (!this._validateEmail(signUpEmail)) {
-      alert("Please enter valid email");
+      alert("Por favor, un email valido");
       return false;
     }
 
     if (signUpPassword.trim() === "") {
-      alert("Please enter password");
+      alert("Por favor, un password");
       return false;
     }
 
     if (signUpPassword.trim().length < 6) {
-      alert("Length of the password should be at least 6");
+      alert("El password tiene que tener al menos 6 caracteres");
       return false;
     }
 

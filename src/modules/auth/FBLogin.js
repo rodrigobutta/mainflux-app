@@ -100,7 +100,7 @@ export default class FBLogin extends Component {
           style={styles.facebookButton}
           onPress={this.facebookLogin}
         >
-          <Text style={styles.facebookButtonTitle}>Continue with Facebook</Text>
+          <Text style={styles.facebookButtonTitle}>Continuar con Facebook</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );

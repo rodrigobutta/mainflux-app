@@ -68,7 +68,7 @@ export default class GoogleLogin extends Component {
           style={styles.facebookButton}
           onPress={this.googleLogin}
         >
-          <Text style={styles.facebookButtonTitle}>Continue with Google</Text>
+          <Text style={styles.facebookButtonTitle}>Continuar con Google</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );

@@ -108,6 +108,7 @@ class Home extends React.Component<any, any>{
   render() {
     const { user } = this.props.auth;
     const { categories } = this.props.request;
+    const { navigation } = this.props;
 
     return (
       <SafeAreaView style={CommonStyles.safeAreaContainer}>
@@ -128,10 +129,11 @@ class Home extends React.Component<any, any>{
 
           <View style={{ height: 30 }} />
 
-          <Button onPress={this.onTestClick} title={"Test 1"} />
-          <Button onPress={this.onTest2Click} title={"Test 2"} />
-          <Button onPress={this.onTest3Click} title={"Test 3"} />
-            
+          <Button onPress={() => navigation.navigate('TestScreen')} title="Tests" />
+          <Button onPress={this.onTestClick} title={"Test Func 1"} />
+          <Button onPress={this.onTest2Click} title={"Test Func 2"} />
+          <Button onPress={this.onTest3Click} title={"Test Func 3"} />
+                      
           <Autocomplete
               list={categories}
               renderListItem={(item) => this.renderListItem(item)}
