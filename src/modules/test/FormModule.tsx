@@ -70,20 +70,11 @@ export default class FormModule extends React.Component{
               }}
               fields={fields}
               theme = {theme}
+              formData = {{
+                user_name: 'Rodri',
+                password: 'rrrr'
+              }}
             />
-
-
-            <Picker
-              note
-              mode="dropdown"
-              style={{ width: 200 }}              
-            >
-              <Picker.Item label="Wallet" value="key0" />
-              <Picker.Item label="ATM Card" value="key1" />
-              <Picker.Item label="Debit Card" value="key2" />
-              <Picker.Item label="Credit Card" value="key3" />
-              <Picker.Item label="Net Banking" value="key4" />
-            </Picker>
 
           <Button onPress={this.onButton1Click} title={"Aceptar"} />
 
@@ -93,11 +84,10 @@ export default class FormModule extends React.Component{
   }
 }
 
-
 const styles = StyleSheet.create({   
   wrapper: {
     flex: 1,
-    marginTop: 150,
+    marginTop: 0,
   },
 });
 
@@ -124,5 +114,38 @@ const fields = [
     defaultValue: 'INDIA',
     options: ['US', 'INDIA', 'UK', 'CHINA', 'FRANCE'],
   },
+  {
+    type: 'switch',
+    name: 'tyc',        
+    label: 'Checcckbox',
+  },  
+  {
+    type: 'select',
+    name: 'project',
+    label: 'Proyecto',
+    objectType: true,
+    labelKey: 'name', // For Below example
+    primaryKey: 'id',  // For Below example
+    options: [
+      {
+        id: 1,
+        name: 'CAR',
+      },
+      {
+        id: 2,
+        name: 'BIKE',
+      },
+      {
+        id: 3,
+        name: 'BICYCLE',
+      },
+    ]
+  },
+  {
+    type: 'date',
+    name: 'fecha',        
+    label: 'Fecha',
+    mode: 'date'
+  },  
 ];
 
