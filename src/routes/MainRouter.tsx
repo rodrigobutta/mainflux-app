@@ -25,6 +25,7 @@ import RequestViewModule from "../modules/request/ViewModule";
 import RequestsModule from "../modules/requests/RequestsModule";
 import TestGeolocationModule from "../modules/test/GeolocationModule";
 import FileModule from "../modules/test/FileModule";
+import FormModule from "../modules/test/FormModule";
 
 
 
@@ -43,6 +44,7 @@ const TestWrapper = ({
       <Button onPress={() => navigation.openDrawer()} title="Menú" />      
       <Button onPress={() => navigation.navigate('Geolocation')} title="Geo" />
       <Button onPress={() => navigation.navigate('File')} title="File" />      
+      <Button onPress={() => navigation.navigate('FormModule')} title="Form" />      
     </SafeAreaView>
     <StatusBar barStyle="default" />
   </ScrollView>
@@ -75,14 +77,13 @@ const ProfileStack = createStackNavigator(
 );
 
 
-
-
 const DashboardStack = createStackNavigator(
   {
     HomeModule: { screen: HomeModule },
     TestScreen: { screen: TestScreen },
     Geolocation: { screen: TestGeolocationModule } ,
-    File: { screen: FileModule }    
+    File: { screen: FileModule }    ,
+    FormModule: { screen: FormModule }
   },
   {
     navigationOptions: {
