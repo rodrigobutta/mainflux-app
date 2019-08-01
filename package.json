@@ -54,6 +54,7 @@
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",
     "rn-viewpager": "^1.2.9",
+    "shorthash": "^0.0.2",
     "xdate": "^0.8.2"
   },
   "devDependencies": {

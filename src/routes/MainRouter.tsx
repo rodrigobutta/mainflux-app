@@ -23,9 +23,11 @@ import RequestInitModule from "../modules/request/InitModule";
 import RequestFormModule from "../modules/request/FormModule";
 import RequestViewModule from "../modules/request/ViewModule";
 import RequestsModule from "../modules/requests/RequestsModule";
-import TestGeolocationModule from "../modules/test/GeolocationModule";
+
+import GeoModule from "../modules/test/GeolocationModule";
 import FileModule from "../modules/test/FileModule";
 import FormModule from "../modules/test/FormModule";
+import CacheModule from "../modules/test/CacheModule";
 
 
 
@@ -42,9 +44,10 @@ const TestWrapper = ({
   <ScrollView>
     <SafeAreaView forceInset={{ top: 'always' }}>      
       <Button onPress={() => navigation.openDrawer()} title="Menú" />      
-      <Button onPress={() => navigation.navigate('Geolocation')} title="Geo" />
-      <Button onPress={() => navigation.navigate('File')} title="File" />      
+      <Button onPress={() => navigation.navigate('GeoModule')} title="Geo" />
+      <Button onPress={() => navigation.navigate('FileModule')} title="File" />      
       <Button onPress={() => navigation.navigate('FormModule')} title="Form" />      
+      <Button onPress={() => navigation.navigate('CacheModule')} title="Cache" />      
     </SafeAreaView>
     <StatusBar barStyle="default" />
   </ScrollView>
@@ -81,9 +84,10 @@ const DashboardStack = createStackNavigator(
   {
     HomeModule: { screen: HomeModule },
     TestScreen: { screen: TestScreen },
-    Geolocation: { screen: TestGeolocationModule } ,
-    File: { screen: FileModule }    ,
-    FormModule: { screen: FormModule }
+    GeoModule: { screen: GeoModule } ,
+    FileModule: { screen: FileModule }    ,
+    FormModule: { screen: FormModule },
+    CacheModule: { screen: CacheModule }
   },
   {
     navigationOptions: {
