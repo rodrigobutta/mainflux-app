@@ -20,8 +20,7 @@ const menuData = [
     {icon: "ios-home", label:"Inicio", screen:'Dashboard', key:'menu_dashboard'},
     {icon: "ios-person", label:"Perfil", screen: 'Profile', key:'menu_profile'},  
     {icon: "ios-megaphone", label:"Request", screen: 'Request', key:'menu_request'},      
-    {icon: "ios-happy", label:"Requests", screen: 'Requests', key:'menu_requests'},  
-    {icon: "md-calendar", label:"Test Agenda", screen: 'Agenda', key:'menu_test_agenda'},  
+    {icon: "ios-happy", label:"Requests", screen: 'Requests', key:'menu_requests'},      
     {icon: "ios-egg", label:"Tests", screen: 'Tests', key:'menu_tests'},  
   ]
   

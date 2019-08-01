@@ -14,16 +14,19 @@ import {
 import { NavigationScreenProp, NavigationState } from 'react-navigation';
 import { fromLeft, fromRight, zoomIn, zoomOut } from 'react-navigation-transitions';
 
+
 import MainMenuContents from "../modules/layout/MainMenu";
 import HomeModule from "../modules/home/Home";
+
 import ProfileModule from "../modules/profile/Profile";
 import EditProfileModule from "../modules/profile/Edit";
-import AgendaModule from '../modules/agenda/agenda';
+
 import RequestInitModule from "../modules/request/InitModule";
 import RequestFormModule from "../modules/request/FormModule";
 import RequestViewModule from "../modules/request/ViewModule";
 import RequestsModule from "../modules/requests/RequestsModule";
 
+import AgendaModule from '../modules/agenda/agenda';
 import GeoModule from "../modules/test/GeolocationModule";
 import FileModule from "../modules/test/FileModule";
 import FormModule from "../modules/test/FormModule";
@@ -44,6 +47,7 @@ const TestWrapper = ({
   <ScrollView>
     <SafeAreaView forceInset={{ top: 'always' }}>      
       <Button onPress={() => navigation.openDrawer()} title="Menú" />      
+      <Button onPress={() => navigation.navigate('AgendaModule')} title="Agenda" />      
       <Button onPress={() => navigation.navigate('GeoModule')} title="Geo" />
       <Button onPress={() => navigation.navigate('FileModule')} title="File" />      
       <Button onPress={() => navigation.navigate('FormModule')} title="Form" />      
@@ -85,8 +89,9 @@ const DashboardStack = createStackNavigator(
     HomeModule: { screen: HomeModule },
     TestScreen: { screen: TestScreen },
     GeoModule: { screen: GeoModule } ,
-    FileModule: { screen: FileModule }    ,
+    FileModule: { screen: FileModule },
     FormModule: { screen: FormModule },
+    AgendaModule: { screen: AgendaModule },
     CacheModule: { screen: CacheModule }
   },
   {
@@ -184,7 +189,6 @@ export const MainNavigation = createDrawerNavigator(
     Dashboard: {
       path: '/dashboard',
       screen: DashboardStack,
-      // screen: HomeModule,
     },
     Tests: {
       path: '/tests',
@@ -197,11 +201,7 @@ export const MainNavigation = createDrawerNavigator(
     Request: {
       path: '/request',
       screen: RequestStack,
-    },    
-    Agenda: {
-      path: '/agenda',
-      screen: AgendaModule,
-    },
+    },      
     Requests: {
       path: '/requests',
       screen: RequestsStack,

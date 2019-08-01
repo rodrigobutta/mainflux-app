@@ -73,12 +73,6 @@ class Home extends React.Component<any, any>{
     notificationsSubscribe("test");
   }
 
-  onTest3Click = () => {
-    console.log('test3 click')
-    notificationsUnsubscribe("hello");
-  }
-
-
   componentDidMount() {
 
     var data = {};
@@ -130,9 +124,12 @@ class Home extends React.Component<any, any>{
           <View style={{ height: 30 }} />
 
           <Button onPress={() => navigation.navigate('TestScreen')} title="Tests" />
+          
+          <View style={{ height: 30 }} />
+
           <Button onPress={this.onTestClick} title={"Test Func 1"} />
           <Button onPress={this.onTest2Click} title={"Test Func 2"} />
-          <Button onPress={this.onTest3Click} title={"Test Func 3"} />
+          
                       
           <Autocomplete
               list={categories}
