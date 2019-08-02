@@ -6,6 +6,10 @@ import {
 import shorthash from 'shorthash';
 import RNFS from 'react-native-fs';
 
+
+// tuto de donde saque el ejemplo
+//https://medium.com/@piyushgupta_81472/caching-images-react-native-96266cdc4c2f
+
 class CacheImage extends React.Component {
 
     state = {
