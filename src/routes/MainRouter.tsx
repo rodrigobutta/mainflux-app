@@ -31,6 +31,7 @@ import GeoModule from "../modules/test/GeolocationModule";
 import FileModule from "../modules/test/FileModule";
 import FormModule from "../modules/test/FormModule";
 import CacheModule from "../modules/test/CacheModule";
+import MapModule from "../modules/test/MapModule";
 
 
 
@@ -49,9 +50,10 @@ const TestWrapper = ({
       <Button onPress={() => navigation.openDrawer()} title="Menú" />      
       <Button onPress={() => navigation.navigate('AgendaModule')} title="Agenda" />      
       <Button onPress={() => navigation.navigate('GeoModule')} title="Geo" />
-      <Button onPress={() => navigation.navigate('FileModule')} title="File" />      
-      <Button onPress={() => navigation.navigate('FormModule')} title="Form" />      
+      <Button onPress={() => navigation.navigate('FileModule')} title="Archivos" />      
+      <Button onPress={() => navigation.navigate('FormModule')} title="Formulario" />      
       <Button onPress={() => navigation.navigate('CacheModule')} title="Cache" />      
+      <Button onPress={() => navigation.navigate('MapModule')} title="Mapa" />      
     </SafeAreaView>
     <StatusBar barStyle="default" />
   </ScrollView>
@@ -92,7 +94,8 @@ const DashboardStack = createStackNavigator(
     FileModule: { screen: FileModule },
     FormModule: { screen: FormModule },
     AgendaModule: { screen: AgendaModule },
-    CacheModule: { screen: CacheModule }
+    CacheModule: { screen: CacheModule },
+    MapModule: { screen: MapModule },
   },
   {
     navigationOptions: {

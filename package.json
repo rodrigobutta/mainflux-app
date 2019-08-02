@@ -38,6 +38,7 @@
     "react-native-iphone-x-helper": "^1.2.1",
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-loading-spinner-overlay": "^1.0.1",
+    "react-native-maps": "0.25.0",
     "react-native-pusher-push-notifications": "^2.1.0",
     "react-native-super-grid": "^3.0.4",
     "react-native-uuid-generator": "^5.0.0",
