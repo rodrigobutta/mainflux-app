@@ -31,4 +31,6 @@ target 'Mainflux' do
 
   pod 'RNFS', :path => '../node_modules/react-native-fs'
 
+  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+
 end

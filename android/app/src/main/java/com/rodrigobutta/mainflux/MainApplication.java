@@ -3,6 +3,7 @@ package com.rodrigobutta.mainflux;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.rnfs.RNFSPackage;
 import com.reactnativecommunity.geolocation.GeolocationPackage;
 // import com.ocetnik.timer.BackgroundTimerPackage;
@@ -56,6 +57,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                 new MainReactPackage(),
+            new RNI18nPackage(),
             new RNFSPackage(),
             new GeolocationPackage(),
             // new BackgroundTimerPackage(),

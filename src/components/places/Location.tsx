@@ -22,6 +22,8 @@ import ActionSheet from 'react-native-actionsheet';
 import _ from 'lodash';
 import UUIDGenerator from 'react-native-uuid-generator';
 
+import { GOOGLE_API_KEY, GOOGLE_PLACES_LANGUAGE } from '../../config/enviroment';
+
 import CommonStyles from "../../utils/CommonStyles";
 import * as LocationStateReducer from '../../redux/reducers/LocationStateReducer';
 import { GooglePlacesAutocomplete } from '../../components/places/GooglePlacesAutocomplete';
@@ -253,8 +255,8 @@ class Location extends React.Component<any, any>{
                 listViewDisplayed="false"                
                 onPress={(place, geo, formattedName, details) => this.newAddressSelected(place, geo, formattedName, details)}                
                 query={{
-                  key: 'AIzaSyCwUBwK3A697kLrXT5FnFgbkCshtrpZTOo',
-                  language: 'en', // language of the results
+                  key: GOOGLE_API_KEY,
+                  language: GOOGLE_PLACES_LANGUAGE, // language of the results
                   // types: 'geocode', // default: 'geocode' ---- (cities)
                 }}
                 styles={{              

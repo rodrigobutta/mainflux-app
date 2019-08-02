@@ -309,7 +309,7 @@ class FormModule extends React.Component {
 					<View style={CommonStyles.page}>
 
 						<Text style={{ fontSize: 20, marginBottom: 20, marginTop: 20 }}>
-							Servicio de {category.name}
+							Tarea bla bla
 						</Text>
 
 						<Input
