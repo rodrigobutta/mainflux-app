@@ -13,9 +13,13 @@ import CommonStyles from "../../utils/CommonStyles";
 import MainMenuBurguer from "../../modules/layout/MainMenuBurguer";
 
 import MapView, { Marker, ProviderPropType, PROVIDER_GOOGLE, PROVIDER_DEFAULT } from 'react-native-maps';
-import flagPinkImg from '../../../assets/twitter.png';
+import markerIcon from '../../../assets/marker.png';
 
+// no se usa porque se pone el key8 en el Manifest meta
 import { GOOGLE_API_KEY } from '../../config/enviroment';
+
+import GoogleMapStyle from './mapStyle.json';
+
 
 const { width, height } = Dimensions.get('window');
 
@@ -73,15 +77,23 @@ export default class MapModule extends React.Component{
 
   
   onMapPress(e) {
+
+    console.log(e.nativeEvent.coordinate)
+
+
     this.setState({
       markers: [
         ...this.state.markers,
         {
           coordinate: e.nativeEvent.coordinate,
           key: `foo${id++}`,
+          description: 'descccccccc',
+          title: 'nombre del marker'
         },
       ],
     });
+
+
   }
 
 
@@ -104,12 +116,14 @@ export default class MapModule extends React.Component{
             style={styles.map}
             initialRegion={this.state.region}
             onPress={this.onMapPress}
+            customMapStyle={GoogleMapStyle}
           >
             {this.state.markers.map(marker => (
               <Marker
-                title={marker.key}
-                image={flagPinkImg}
+                title={marker.title}
+                image={markerIcon}
                 key={marker.key}
+                description={marker.description}
                 coordinate={marker.coordinate}
               />
             ))}
@@ -119,7 +133,7 @@ export default class MapModule extends React.Component{
               onPress={() => this.setState({ markers: [] })}
               style={styles.bubble}
             >
-              <Text>Tap to create a marker of random color</Text>
+              <Text>Borrar marcadores</Text>
             </TouchableOpacity>
           </View>
 
