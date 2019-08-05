@@ -32,6 +32,7 @@ import FileModule from "../modules/test/FileModule";
 import FormModule from "../modules/test/FormModule";
 import CacheModule from "../modules/test/CacheModule";
 import MapModule from "../modules/test/MapModule";
+import DocumentModule from "../modules/test/DocumentModule";
 
 
 
@@ -54,6 +55,7 @@ const TestWrapper = ({
       <Button onPress={() => navigation.navigate('FormModule')} title="Formulario" />      
       <Button onPress={() => navigation.navigate('CacheModule')} title="Cache" />      
       <Button onPress={() => navigation.navigate('MapModule')} title="Mapa" />      
+      <Button onPress={() => navigation.navigate('DocumentModule')} title="Documento" />      
     </SafeAreaView>
     <StatusBar barStyle="default" />
   </ScrollView>
@@ -96,6 +98,7 @@ const DashboardStack = createStackNavigator(
     AgendaModule: { screen: AgendaModule },
     CacheModule: { screen: CacheModule },
     MapModule: { screen: MapModule },
+    DocumentModule: { screen: DocumentModule },
   },
   {
     navigationOptions: {

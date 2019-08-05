@@ -50,6 +50,7 @@
 		FF5B2D0690FF4FA1A17C32F7 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C8F82B8C314D598E64E780 /* Ionicons.ttf */; };
 		3D0138C5E3C74101905C622F /* libRNPopoverMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40AD202A77D34B0C81AF83BC /* libRNPopoverMenu.a */; };
 		74F4AA86F696472F8D337A38 /* libRNUUIDGenerator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5261422E42174C908F1A35C2 /* libRNUUIDGenerator.a */; };
+		D2B816621433425C82DFAA7B /* libRNFileViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4725FCF2377F4E0BBB4ED4CB /* libRNFileViewer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -416,6 +417,8 @@
 		40AD202A77D34B0C81AF83BC /* libRNPopoverMenu.a */ = {isa = PBXFileReference; name = "libRNPopoverMenu.a"; path = "libRNPopoverMenu.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		04C029177C6742E7807BBB5B /* RNUUIDGenerator.xcodeproj */ = {isa = PBXFileReference; name = "RNUUIDGenerator.xcodeproj"; path = "../node_modules/react-native-uuid-generator/ios/RNUUIDGenerator.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		5261422E42174C908F1A35C2 /* libRNUUIDGenerator.a */ = {isa = PBXFileReference; name = "libRNUUIDGenerator.a"; path = "libRNUUIDGenerator.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9FD89A9D09654E17B5002021 /* RNFileViewer.xcodeproj */ = {isa = PBXFileReference; name = "RNFileViewer.xcodeproj"; path = "../node_modules/react-native-file-viewer/ios/RNFileViewer.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		4725FCF2377F4E0BBB4ED4CB /* libRNFileViewer.a */ = {isa = PBXFileReference; name = "libRNFileViewer.a"; path = "libRNFileViewer.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +450,7 @@
 				F5270BC51C4C4D5A87B0CDDF /* libRNFirebase.a in Frameworks */,
 				3D0138C5E3C74101905C622F /* libRNPopoverMenu.a in Frameworks */,
 				74F4AA86F696472F8D337A38 /* libRNUUIDGenerator.a in Frameworks */,
+				D2B816621433425C82DFAA7B /* libRNFileViewer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +640,7 @@
 				762C71B5729C4AFFB3F04F4A /* RNFirebase.xcodeproj */,
 				3519716652F9417F95D96075 /* RNPopoverMenu.xcodeproj */,
 				04C029177C6742E7807BBB5B /* RNUUIDGenerator.xcodeproj */,
+				9FD89A9D09654E17B5002021 /* RNFileViewer.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1326,11 +1331,13 @@
 					"$(SRCROOT)/../node_modules/react-native-google-signin/ios",
 					"$(SRCROOT)\..\node_modules\react-native-popover-menu\ios",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
+					"$(SRCROOT)\..\node_modules\react-native-file-viewer\ios",
 				);
 				INFOPLIST_FILE = Mainflux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/Mainflux\"",
 					"\"$(SRCROOT)/Mainflux\"",
 					"\"$(SRCROOT)/Mainflux\"",
 				);
@@ -1365,11 +1372,13 @@
 					"$(SRCROOT)/../node_modules/react-native-google-signin/ios",
 					"$(SRCROOT)\..\node_modules\react-native-popover-menu\ios",
 					"$(SRCROOT)\..\node_modules\react-native-uuid-generator\ios",
+					"$(SRCROOT)\..\node_modules\react-native-file-viewer\ios",
 				);
 				INFOPLIST_FILE = Mainflux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/Mainflux\"",
 					"\"$(SRCROOT)/Mainflux\"",
 					"\"$(SRCROOT)/Mainflux\"",
 				);

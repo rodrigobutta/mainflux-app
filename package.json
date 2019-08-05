@@ -29,6 +29,7 @@
     "react-native-blur": "^3.2.2",
     "react-native-elements": "^1.1.0",
     "react-native-fbsdk": "^0.8.0",
+    "react-native-file-viewer": "^2.0.0",
     "react-native-firebase": "^5.2.2",
     "react-native-fs": "^2.14.1",
     "react-native-gesture-handler": "1.1.3",
