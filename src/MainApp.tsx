@@ -1,5 +1,11 @@
 import React from "react";
-import { View, StatusBar, Text, Image } from "react-native";
+import { 
+    View, 
+    StatusBar, 
+    Text, 
+    Image ,
+    AppState
+} from "react-native";
 import firebase from "react-native-firebase";
 import { GoogleSignin } from 'react-native-google-signin';
 import { LoginManager } from "react-native-fbsdk";
@@ -170,11 +176,28 @@ class MainApp extends React.Component {
 
 
   componentDidMount() {
-    this._isMounted = true;      
+    this._isMounted = true; 
+    
+    AppState.addEventListener("change", this._handleAppStateChange);
+
   }
 
   componentWillUnmount() {
     this._isMounted = false;
+
+    AppState.addEventListener("change", this._handleAppStateChange);
+
+  }
+
+
+  // state can be active for foreground and inactive when transitioning between background and foreground
+  _handleAppStateChange = (nextAppState) => {     
+    if (nextAppState === 'background') {      
+       console.log('App is in background!')     
+    }
+    else{
+      console.log('App is in foreground!')     
+    }
   }
 
 
