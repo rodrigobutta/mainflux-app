@@ -204,6 +204,8 @@ class MainApp extends React.Component {
 
   _coreAuth = (user) => {
     console.log('_coreAuth')
+
+    let self = this;
         
     user.getIdToken().then(function(idToken) {  // <------ Check this line
       // console.log("app-js _coreAuth");
@@ -219,13 +221,24 @@ class MainApp extends React.Component {
         data.photourl = user.photoURL;
         data.provider = user.providerData[0].providerId;
     
+        // fuerzo el token a null porque si viene un token viejo por notrefrssh entonces el servicio me lo rechaza con "This token has an invalid issuer"
+      let axiosConfig = {
+        headers: {
+            'authorization': '',
+            "Access-Control-Allow-Origin": "*",
+        }
+      };
+
       axios
-      .post(API_URL + '/auth/firebase/login', data)
+      .post(API_URL + '/auth/firebase/login', data, axiosConfig)
       .then(response => {
         // console.log(response);
           
         store.dispatch(setToken(response.data.access_token, response.data.expires_at));
         store.dispatch(setUser(response.data.user));
+
+        // lo fuerzo para que pase de pantalla
+        self.setState({ isLogin: true });
 
         return true;
       })

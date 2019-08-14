@@ -43,7 +43,10 @@ class MainMenu extends Component {
 
     return (
       <View style={styles.container}>
+        
+        {user&&
         <Profile avatar={user.avatar} username={user.name} email={user.email} />
+        }
         
         <FlatList
             data={menuData} 
