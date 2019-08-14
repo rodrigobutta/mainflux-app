@@ -49,13 +49,13 @@ const TestWrapper = ({
   <ScrollView>
     <SafeAreaView forceInset={{ top: 'always' }}>      
       <Button onPress={() => navigation.openDrawer()} title="Menú" />      
-      <Button onPress={() => navigation.navigate('AgendaModule')} title="Agenda" />      
-      <Button onPress={() => navigation.navigate('GeoModule')} title="Geo" />
+      <Button onPress={() => navigation.navigate('AgendaModule')} title="Agenda Terceros" />      
+      <Button onPress={() => navigation.navigate('GeoModule')} title="Coordenadas Geo" />
       <Button onPress={() => navigation.navigate('FileModule')} title="Archivos" />      
       <Button onPress={() => navigation.navigate('FormModule')} title="Formulario" />      
-      <Button onPress={() => navigation.navigate('CacheModule')} title="Cache" />      
+      <Button onPress={() => navigation.navigate('CacheModule')} title="Imagen Cache" />      
       <Button onPress={() => navigation.navigate('MapModule')} title="Mapa" />      
-      <Button onPress={() => navigation.navigate('DocumentModule')} title="Documento" />      
+      <Button onPress={() => navigation.navigate('DocumentModule')} title="Documento Cache y Ver" />      
     </SafeAreaView>
     <StatusBar barStyle="default" />
   </ScrollView>

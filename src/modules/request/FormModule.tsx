@@ -38,7 +38,7 @@ import Process  from '../../components/Process/Process';
 class FormModule extends React.Component {
 	static navigationOptions = ({ navigation }) => {
 		return {
-		  headerTitle: 'Pedí presupuesto'		  		  
+		  headerTitle: 'Form de tarea'		  		  
 		};
 	};   
 

@@ -106,56 +106,40 @@ class Home extends React.Component<any, any>{
 
     return (
       <SafeAreaView style={CommonStyles.safeAreaContainer}>
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <View style={{ flex: 1, alignItems: "stretch", justifyContent: "center" }}>
+          <View style={styles.container}>
 
-          <View style={{ height: 30 }} />
+            <Image source={require("../../../assets/app_logo.png")} style={styles.logo} />
+
+            {user&&
+            <Text style={styles.welcome}>Hola {user.name}!</Text>
+            }
+
+            <View style={{ height: 30 }} />
+            <Button onPress={() => navigation.navigate('TestScreen')} title="Tests" />
+            
+            {/* <View style={{ height: 30 }} /> */}
+            {/* <Button onPress={this.onTestClick} title={"Test Func 1"} /> */}
+            {/* <Button onPress={this.onTest2Click} title={"Test Func 2"} /> */}
+            
+            <View style={{ height: 30 }} />
+            <Autocomplete
+                list={categories}
+                renderListItem={(item) => this.renderListItem(item)}
+                startSuggestingFrom={2}
+                inputStyle={styles.searchInput}
+                suggestBoxStyle={styles.suggestBox}
+                suggestBoxMaxHeight={220}
+                placeholder="buscar tarea .."
+            />
           
-          <Image
-            source={require("../../../assets/app_logo.png")}
-            style={{ height: 100, width: 100, marginBottom: 10 }}
-          />
-
-          {user&&
-          <Text style={{ fontSize: 22, marginBottom: 10 }}>
-            Hola {user.name}!
-          </Text>
-          }
-
-          <View style={{ height: 30 }} />
-
-          <Button onPress={() => navigation.navigate('TestScreen')} title="Tests" />
-          
-          <View style={{ height: 30 }} />
-
-          <Button onPress={this.onTestClick} title={"Test Func 1"} />
-          <Button onPress={this.onTest2Click} title={"Test Func 2"} />
-          
-                      
-          <Autocomplete
-              list={categories}
-              renderListItem={(item) => this.renderListItem(item)}
-              startSuggestingFrom={2}
-              inputStyle={styles.searchInput}
-              suggestBoxStyle={styles.suggestBox}
-              suggestBoxMaxHeight={220}
-              placeholder="buscar tarea .."
-          />
-
+          </View>
 
         </View>
       </SafeAreaView>
     );
   }
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     auth: state.auth,
-//     request: state.request
-//   };
-// };
-// export default connect(mapStateToProps)(Home);
-
 
 export default connect(
   state => ({
@@ -169,23 +153,35 @@ export default connect(
   }
 )(Home);
 
-
 const styles = StyleSheet.create({
   normalText: {
     fontSize: 15,
     marginBottom: 5
   },
   container: {
-      flex: 1,
-      backgroundColor: '#f2f2f2',
-      padding: 15
+    flex: 1,
+    backgroundColor: '#fafafa',
+    alignItems: 'stretch',
+    padding: 15
+  },
+  logo: {
+    height: 100, 
+    width: 100, 
+    marginBottom: 10, 
+    alignSelf: 'center'
+  },
+  welcome: {
+    fontSize: 22, 
+    marginBottom: 10, 
+    alignSelf: 'center',
+    color: '#111111'
   },
   searchInput: {
-      height: 50,
-      borderColor: '#f2f2f2',
-      borderWidth: 1,
-      paddingLeft: 10,
-      backgroundColor: '#fff'
+    height: 50,
+    borderColor: '#f2f2f2',
+    borderWidth: 1,
+    paddingLeft: 10,
+    backgroundColor: '#fff'
   },
   suggestBox: {
     backgroundColor: '#fff',
@@ -193,16 +189,16 @@ const styles = StyleSheet.create({
     height: 220,
 },
   listItem: {
-      width: '100%',
-      flex: 1,
-      flexDirection: 'row',
-      height: 55,
-      paddingLeft: 10,
-      paddingRight: 10,
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      borderBottomWidth: 1,
-      borderColor: '#e5e5e5',
+    width: '100%',
+    flex: 1,
+    flexDirection: 'row',
+    height: 55,
+    paddingLeft: 10,
+    paddingRight: 10,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: '#e5e5e5',
   },
   listItemText: {
       fontSize: 20
